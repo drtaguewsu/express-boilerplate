@@ -3,9 +3,9 @@ import debug from 'debug';
 import * as server from './config/server.js';
 import { homeRouter } from './routes/home.js';
 
-// Setup debug module to spit out all requests
-// Do npn start to see the debug messages
-debug('comp3028:server');
+// Setup debug module to spit out all messages
+// Do `npn start` to see the debug messages
+export const codeTrace = debug('comp3028:server');
 
 // Start the app
 export const app = express();
