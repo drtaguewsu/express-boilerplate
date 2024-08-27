@@ -14,7 +14,7 @@ server.setup(app)
 // Register any middleware here
 
 // Register routers here
-app.get('/', homeRouter);
+app.use('/', homeRouter);
 
 // Not encouraged, but this is a simple example of how to register a route without a router.
 app.get('/test', (req, res) => {
