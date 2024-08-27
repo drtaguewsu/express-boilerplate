@@ -3,6 +3,7 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import express from 'express';
 import path from 'path';
+import fileUpload from 'express-fileupload';
 
 // Set the server port
 export const port = 3000;
@@ -20,6 +21,8 @@ export function setup (app) {
     app.use(express.urlencoded({ extended: false }));
     app.use(cookieParser());
     app.use(express.static(path.join(import.meta.dirname, '..', 'public')));
+    // Allow file uploads
+    app.use(fileUpload({debug: true}));
 
     // view engine setup
     app.set('views', path.join(import.meta.dirname, '..', 'views'));

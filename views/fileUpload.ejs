@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Form</title>
+    <style>
+        div {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="/upload" enctype="multipart/form-data">
+        <div>
+            <label for="name">Upload File:</label>
+            <input type="file" id="file" name="file" required>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    <p>The file uploaded is: <%= msg %></p>
+</body>
+</html>

@@ -16,10 +16,7 @@ server.setup(app)
 // Register routers here
 app.use('/', homeRouter);
 
-// Not encouraged, but this is a simple example of how to register a route without a router.
-app.get('/test', (req, res) => {
-  res.send('Test');
-});
+
 
 // ####################################### No need to modify below this line #######################################
 // Start the server
