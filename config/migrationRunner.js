@@ -3,7 +3,6 @@
 import fs from 'fs';
 import path from 'path';
 import postgres from 'postgres';
-import { fileURLToPath } from 'url';
 
 // Database connection configuration
 const sql = postgres({
