@@ -1,4 +1,5 @@
 import path from 'path';
+import sql from '../config/db.js';
 
 /**
  * Renders the index page with the specified title.
@@ -71,5 +72,34 @@ export async function uploadFile(req, res, next) {
         );
     }
     res.render('fileUpload', {msg: msg});
+}
+
+export async function user (req, res, next) {
+    try {
+        
+
+        let singleUser = true;
+        if(!req.params.id) {
+            singleUser = false;
+        }
+
+        const idFunc = insertedID => sql`where id = ${ insertedID }`;
+        const id = req.params.id;
+        
+        const result = await sql`select * from users 
+        ${
+            singleUser
+              ? idFunc(id)
+              : sql``
+          }
+        `
+        // if true statement will be
+        // select * from users where id = 3
+        // else 
+        // select * from users
+        res.render('user', {users: result});
+    } catch (error) {
+        res.status(500).send(`DB error: ${error}`);
+    }
 }
 

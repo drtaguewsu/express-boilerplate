@@ -10,6 +10,7 @@ homeRouter.post('/submit', home.submit);
 homeRouter.post('/api/data', home.getData);
 homeRouter.get('/upload', home.uploadFile);
 homeRouter.post('/upload', home.uploadFile);
+homeRouter.get('/user/:id?', home.user);
 
 
 
