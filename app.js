@@ -24,7 +24,8 @@ app.get('/test', (req, res) => {
 // ####################################### No need to modify below this line #######################################
 // Start the server
 server.errorHandling(app);
-app.listen(server.port, () => {
+export const runningServer = app.listen(server.port, () => {
   console.log(`Example app listening on port http://127.0.0.1:${server.port}`);
   debug('testing');
 });
+
