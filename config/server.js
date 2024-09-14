@@ -26,7 +26,7 @@ export function setup (app) {
         secret: 'comp3028', 
         saveUninitialized: false,
         resave: true,
-        cookie: { maxAge: 60000 }}))
+        cookie: { maxAge: 60000 }}));
 
     // view engine setup
     app.set('views', path.join(import.meta.dirname, '..', 'views'));
