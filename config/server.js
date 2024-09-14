@@ -3,6 +3,7 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import express from 'express';
 import path from 'path';
+import session from 'express-session';
 
 // Set the server port
 export const port = 3000;
@@ -20,6 +21,12 @@ export function setup (app) {
     app.use(express.urlencoded({ extended: false }));
     app.use(cookieParser());
     app.use(express.static(path.join(import.meta.dirname, '..', 'public')));
+    // Having the key here and this type of key is not not recommended for production
+    app.use(session({ 
+        secret: 'comp3028', 
+        saveUninitialized: false,
+        resave: true,
+        cookie: { maxAge: 60000 }}))
 
     // view engine setup
     app.set('views', path.join(import.meta.dirname, '..', 'views'));
