@@ -1,4 +1,3 @@
-
 /**
  * Renders the index page with the specified title.
  * 
@@ -10,4 +9,8 @@
 export async function index(req, res, next) {
     res.render('home', { title: 'Express' });
 }
+
+
+
+
 
