@@ -3,8 +3,7 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import express from 'express';
 import path from 'path';
-import session from 'express-session';
-import 'dotenv/config';
+
 
 // Set the server port
 export const port = 3000;
